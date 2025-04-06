@@ -1,0 +1,48 @@
+using System;  
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            if(a<60)
+            {
+                Console.WriteLine("F");
+            }
+            else if(a>=60 && a<=63)
+            {
+                Console.WriteLine("D-");
+            }
+            else if(a>=64 && a<=69)
+            {
+                Console.WriteLine("D+");
+            }
+            else if(a>=70 && a<=73)
+            {
+                Console.WriteLine("C-");
+            }
+            else if(a>=74 && a<=79)
+            {
+                Console.WriteLine("C+");
+            }
+            else if(a>=80 && a<=83)
+            {
+                Console.WriteLine("B-");
+            }
+            else if(a>=84 && a<=89)
+            {
+                Console.WriteLine("B+");
+            }
+            else if(a>=90 && a<=92)
+            {
+                Console.WriteLine("A-");
+            }
+            else if(a>=93 && a<=100)
+            {
+                Console.WriteLine("A+");
+            }
+        }
+    }
+}
