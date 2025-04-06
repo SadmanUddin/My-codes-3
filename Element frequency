@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string a = Console.ReadLine();
+        char[] b = a.ToCharArray();
+
+        int[] fre = new int[256];
+
+        for (int i = 0; i < b.Length; i++)
+        {
+            fre[b[i]]++;
+        }
+
+        for (int i = 0; i < 256; i++)
+        {
+            if (fre[i] > 0)
+            {
+                Console.WriteLine($"Character '{(char)i}': {fre[i]} times");
+            }
+        }
+    }
+}
