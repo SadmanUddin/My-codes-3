@@ -1,0 +1,22 @@
+using System;
+namespace sadamn
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = 1;
+
+            for(int row = 1; row<=a; row++)
+            {
+                for(int column = 1; column <= row; column++)
+                {
+                    Console.Write(b + " ");
+                    b++;
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
