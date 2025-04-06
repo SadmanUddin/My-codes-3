@@ -1,0 +1,26 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int A = int.MinValue;
+
+            while(true)
+            {
+                string B = Console.ReadLine();
+                if(B.ToUpper() == "X")
+                break;
+
+                int C = Convert.ToInt32(B);
+
+                if(C > A)
+                {
+                    A=C;
+                }
+            }
+            Console.WriteLine(A);
+        }
+    }
+}
