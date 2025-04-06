@@ -1,0 +1,24 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            if(a % 4 == 0 && a % 100 !=0)
+            {
+                Console.WriteLine($"{a} is a leap year");
+            }
+            else if(a % 400 == 0)
+            {
+                Console.WriteLine($"{a} is a leap year");
+            }
+            else
+            {
+                Console.WriteLine($"{a} is not a leap year");
+            }
+        }
+    }
+}
