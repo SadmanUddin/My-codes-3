@@ -1,0 +1,50 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string A = Console.ReadLine();
+
+             int vowels = 0;
+             int Consonants = 0;
+             int digits = 0;
+             int other = 0;
+
+                for(int i = 0; i<A.Length; i++)
+                {
+                    char b = A[i];
+                    if (b == ' ')
+                        {
+                            continue;
+                        }
+                    if (char.IsLetter(b))
+                        {
+                            char lower = char.ToLower(b);
+                            if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u')
+                                {
+                                    vowels++;
+                                }
+                            else
+                                {
+                                    Consonants++;
+                                }
+                        }
+                    else if (char.IsDigit(b))
+                        {
+                            digits++;
+                        }
+                    else
+                        {
+                            other++;
+                        }
+                }
+
+                Console.WriteLine("consonants: " + Consonants);
+                Console.WriteLine("vowels: " + vowels);
+                Console.WriteLine("digits: " + digits);
+                Console.WriteLine("other: " + other);
+        }
+    }
+}
