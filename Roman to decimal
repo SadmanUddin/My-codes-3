@@ -1,0 +1,59 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string roman = (Console.ReadLine());
+            int sum = 0;
+            int prev = 0;
+
+            for(int i = 0; i<roman.Length;i++)
+            {
+                int Q = 0;
+                char c = roman[i];
+
+                if(c=='M') 
+                {
+                    Q = 1000;
+                }
+                if(c=='D') 
+                {
+                    Q = 500;
+                }
+                if(c=='C') 
+                {
+                    Q = 100;
+                }
+                if(c=='L') 
+                {
+                    Q = 50;
+                }
+                if(c=='X') 
+                {
+                    Q = 10;
+                }
+                if(c=='V') 
+                {
+                    Q = 5;
+                }
+                if(c=='I') 
+                {
+                    Q = 1;
+                }
+
+                if (Q<prev)
+                {
+                    sum = sum-Q;
+                }
+                else
+                {
+                    sum = sum+Q;
+                }
+                
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
