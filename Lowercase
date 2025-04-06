@@ -1,0 +1,14 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        
+        string name = Console.ReadLine();
+        string animal = Console.ReadLine().ToLower();
+
+        
+        Console.WriteLine($"{name}, your favorite animal is {animal}");
+    }
+}
