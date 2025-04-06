@@ -1,0 +1,14 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double number = Convert.ToDouble(Console.ReadLine());
+            double decimalpart = Math.Abs(number-Math.Truncate(number));
+            decimalpart = Math.Round(decimalpart, 7);
+            Console.WriteLine(decimalpart);
+        }
+    }
+}
