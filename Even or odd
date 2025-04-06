@@ -1,0 +1,28 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string A = Console.ReadLine();
+            string[] sadman = A.Split(' ');
+            string[] sadman1 = new string[sadman.Length];
+
+            for (int i = 0; i < sadman.Length; i++)
+            {
+                int num = Convert.ToInt32(sadman[i]);
+                if (num % 2 == 0)
+                {
+                    Console.Write("Even ");
+                }
+                else
+                {
+                    Console.Write("Odd ");
+                }
+            }
+
+        }
+    }
+}
