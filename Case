@@ -1,0 +1,22 @@
+using System;
+
+namespace CharacterCheck
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Console.ReadLine();
+            char b = a[0];
+
+            if(char.IsLower(b))
+            {
+                Console.WriteLine("lowercase");
+            }
+            else if(char.IsUpper(b))
+            {
+                Console.WriteLine("uppercase");
+            }
+        }
+    }
+}
