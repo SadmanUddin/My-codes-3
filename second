@@ -1,0 +1,34 @@
+using System;
+namespace sadamn
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] A = Console.ReadLine().Split();
+            int[] Sadman = new int[A.Length];
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                Sadman[i] = Convert.ToInt32(A[i]);
+            }
+
+            int largest = int.MinValue;
+            int secondlargest = int.MinValue;
+
+            for (int i = 0; i < Sadman.Length; i++)
+            {
+                if (Sadman[i] > largest)
+                   {
+                    secondlargest = largest;
+                    largest = Sadman[i];
+                    }
+                else if (Sadman[i] > secondlargest && Sadman[i] < largest)
+                {
+                secondlargest = Sadman[i];
+                }
+             }
+             Console.WriteLine(secondlargest);
+        }
+    }
+}
