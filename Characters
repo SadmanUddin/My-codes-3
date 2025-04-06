@@ -1,0 +1,18 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        
+        string firstName = Console.ReadLine().Trim();
+        string lastName = Console.ReadLine().Trim();
+
+        
+        int firstNameLength = firstName.Length;
+        int lastNameLength = lastName.Length;
+
+       
+        Console.WriteLine($"{firstName} {lastName}, your first name has {firstNameLength} characters and your last name has {lastNameLength}");
+    }
+}
