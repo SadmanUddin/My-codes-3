@@ -1,0 +1,27 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double a = Convert.ToDouble(Console.ReadLine());
+            double b = Math.Pow(2,a)+1;
+            double c = 2*a+1;
+
+            if (b%c == 0)
+            {
+                Console.WriteLine("True");
+            }
+            else if(b%c != 1 && a !=15.3)
+            {
+                Console.WriteLine("False");
+
+            }
+            else if(a==15.3)
+            {
+                Console.WriteLine("crazy input");
+            }
+        }
+    }
+}
