@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        int[,] mattrix = new int[n, n];
+
+        for (int i = 0; i < n; i++)
+        {
+            string[] X = Console.ReadLine().Split(' ');
+            for (int j = 0; j < n; j++)
+            {
+                mattrix[i, j] = Convert.ToInt32(X[j]);
+            }
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write(mattrix[j, i] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
