@@ -1,0 +1,34 @@
+using System;
+
+namespace Sadman
+{
+    class Program
+    {
+        static void Main()
+        {
+            string input = Console.ReadLine();
+            string[] a = input.Split(' ');
+
+            if (a.Length != 2)
+            {
+                //Console.WriteLine("Please enter exactly two space-separated strings.");
+                return;
+            }
+
+            char[] X = a[0].ToCharArray();
+            char[] Y = a[1].ToCharArray();
+
+            int B = X.Length - 1, C = Y.Length - 1;
+            string result = "";
+
+            while (B >= 0 && C >= 0 && X[B] == Y[C])
+            {
+                result = X[B] + result;
+                B--;
+                C--;
+            }
+
+            Console.WriteLine(result);
+        }
+    }
+}
