@@ -1,0 +1,15 @@
+using System;
+using System.Globalization;
+using System.Threading;
+namespace Sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double A = Convert.ToDouble(Console.ReadLine());
+            double r = Math.Sqrt(A/Math.PI);
+            Console.WriteLine($"{r:F2}");
+        }
+    }
+}
