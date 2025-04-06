@@ -1,0 +1,29 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            //int a = 1;
+            double sum = 0;
+            string series = "";
+
+            for (double i = 1; i<=n; i++)
+            {
+                sum = sum + 1/i;
+                if (i==1)
+                {
+                    series = series+ $"1/{i}";
+                }
+                else
+                {
+                    series = series + $" + 1/{i}";
+                }
+            }
+                Console.WriteLine(series);
+                Console.WriteLine( $"sum = {sum:F5}");
+        }
+    }
+}
