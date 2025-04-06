@@ -1,0 +1,17 @@
+using System;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        double a = Convert.ToDouble(Console.ReadLine());
+        char b = (char)a;
+        //Console.WriteLine($"{b.ToString().ToUpper()}");
+        //Console.WriteLine($"{b.ToString().ToLower()}");
+        Console.WriteLine(char.ToLower(b));
+        Console.WriteLine(char.ToUpper(b));
+
+        
+        
+    }
+}
