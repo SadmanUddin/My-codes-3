@@ -1,0 +1,30 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Console.ReadLine();
+            string b = "";
+             for(int i = 0; i<a.Length; i++)
+                {
+                 char c = a[i];
+                 bool exits = false;
+                    for(int j = 0; j<b.Length; j++)
+                    {
+                        if (b[j] == c)
+                        {
+                             exits = true;
+                                break;
+                        }
+                    }
+                    if (!exits)
+                        {
+                             b += c;
+                        }
+                }
+                Console.WriteLine(b);
+        }
+    }
+}
