@@ -1,0 +1,39 @@
+using System;
+using System.IO;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            string fileName = Console.ReadLine();
+            string newName = Console.ReadLine();
+
+            bool isName = true;
+
+            for(int i = 0; i<newName.Length; i++)
+            {
+                if (!char.IsLetter(newName[i]))
+                {
+                    isName=false;
+                    break;
+                }
+            }
+
+            if (!isName)
+            {
+                Console.WriteLine($"{newName} is not a name.");
+                return;
+            }
+
+            string originalName = Path.GetFileNameWithoutExtension(fileName);
+            string text = File.ReadAllText(fileName);
+            string A = text.Replace(originalName, newName);
+
+            Console.WriteLine(A);
+
+
+        }
+    }
+}
