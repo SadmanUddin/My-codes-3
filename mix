@@ -1,0 +1,56 @@
+using System;
+using System.IO;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+             string X = Console.ReadLine();
+                string Y = Console.ReadLine();
+                //string A = X + ".txt";
+                //string B = Y + ".txt";
+                int Q = Convert.ToInt32(Console.ReadLine());
+
+                string text1 = File.ReadAllText(X);
+                string text2 = File.ReadAllText(Y);
+
+                string result = "";
+
+                int i1 = 0;
+                int i2 = 0;
+
+                for(int i = 0; i<Q*2; i++)
+                {
+                     if (i%2==0)
+                    {
+                         if (i1<text1.Length)
+                        {
+                            result += text1[i1];
+                             i1++;
+                        }
+                         else if(i2<text2.Length)
+                        {
+                             result += text2[i2];
+                             i2++;
+                        }
+                    }
+                     else
+                    {
+                         if (i2<text2.Length)
+                        {
+                             result += text2[i2];
+                             i2++;
+                        }
+                         else if (i1<text1.Length)
+                        {
+                             result += text1[i1];
+                             i1++;
+                        }
+                    }
+
+                }
+                Console.Write(result);
+        }
+    }
+}
