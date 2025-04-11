@@ -1,0 +1,39 @@
+
+Feedback Overview
+AutoTest
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+                string a = Console.ReadLine().ToLower();
+                bool[] D = new bool[26];
+                int result = 0;
+
+
+                for (int i = 0; i<a.Length; i++)
+                {
+                    char X = a[i];
+                    if (X >= 'a' && X<='z')
+                    {
+                        int position = X - 'a';
+                        if (!D[position])
+                        {
+                            D[position] = true;
+                            result++;
+                        }
+                    }
+                }
+                if (result==26)
+                {
+                    Console.WriteLine("True");
+                }
+                else
+                {
+                    Console.WriteLine("False");
+                }
+        }
+    }
+}
