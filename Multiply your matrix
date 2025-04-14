@@ -1,0 +1,57 @@
+using System;
+
+namespace sadman
+{
+    internal class Program
+    {
+      int rowa = Convert.ToInt32(Console.ReadLine());
+      int cola = Convert.ToInt32(Console.ReadLine());
+      int rowb = Convert.ToInt32(Console.ReadLine());
+      int colb = Convert.ToInt32(Console.ReadLine());
+
+      if (cola!=rowb)
+      {
+          Console.WriteLine("wrong dimensions");
+      }
+
+      int[,] mattrixA = new int[rowa, cola];
+      int[,] mattrixB = new int[rowb, colb];
+      int[,] result = new int[rowa, colb];
+
+      for (int i = 0; i<rowa; i++)
+      {
+          for (int j = 0; j<cola; j++)
+          {
+              mattrixA[i, j] = Convert.ToInt32(Console.ReadLine());
+          }
+      }
+
+      for (int i = 0; i<rowb; i++)
+      {
+          for (int j = 0; j<colb; j++)
+          {
+              mattrixB[i, j] = Convert.ToInt32(Console.ReadLine());
+          }
+      }
+
+      for (int i = 0; i<rowa; i++)
+      {
+          for (int j = 0; j<colb; j++)
+          {
+              for (int k = 0; k<cola; k++)
+              {
+                  result[i, j] += mattrixA[i, k] * mattrixB[k, j];
+              }
+          }
+      }
+
+      for (int i = 0; i<rowa; i++)
+      {
+          for (int j = 0; j<colb; j++)
+          {
+              Console.Write(result[i, j] + " ");
+          }
+          Console.WriteLine();
+      }
+  }
+}
