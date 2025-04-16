@@ -1,0 +1,44 @@
+using System;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            try
+            {
+
+                double A = Convert.ToDouble(Console.ReadLine());
+                string X = Console.ReadLine();
+                double B = Convert.ToDouble(Console.ReadLine());
+
+                if (X == "*")
+                {
+                    Console.WriteLine("Result: "+ (A*B));
+                }
+                else if (X == "+")
+                {
+                    Console.WriteLine("Result: "+ (A+B));
+                }
+                else if (X == "-")
+                {
+                    Console.WriteLine("Result: "+ (A-B));
+                }
+                else if (X == "/")
+                {
+                    Console.WriteLine("Result: "+ (A/B));
+                }
+                else if (X == "%")
+                {
+                    Console.WriteLine("Result: "+ (A%B));
+                }
+            }
+
+            catch (FormatException)
+            {
+                Console.WriteLine("converting problem");
+            }
+        }
+    }
+}
