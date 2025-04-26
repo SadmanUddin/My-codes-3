@@ -1,0 +1,56 @@
+using System;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        
+            string X = Console.ReadLine();
+            string[] Y = X.Split(' ');
+            List<int> A = new List<int>();
+            List<int> P = new List<int>();
+            List<int> N = new List<int>();
+            for (int i = 0; i<Y.Length; i++)
+            {
+                int num = Convert.ToInt32(Y[i]);
+                A.Add(num);
+            }
+            for(int i = 0;i<A.Count; i++)
+            {
+                Console.Write(A[i]+" ");
+            }
+            Console.WriteLine();
+
+            //int highest = A.Max();
+            //int lowest = A.Min();
+            //int avg = (int)A.Average();
+
+            //Console.WriteLine(highest);
+            //Console.WriteLine(lowest);
+            //Console.WriteLine(avg);
+            //Console.WriteLine(string.Join(" "),A);
+
+            for(int i = 0; i<A.Count;i++)
+            {
+                int num = Convert.ToInt32(A[i]);
+                if (num>=0)
+                {
+                    P.Add(num);
+                }
+                else
+                {
+                    N.Add(num);
+                }
+            }
+
+            for (int i = 0; i<P.Count; i++)
+            {
+                Console.Write(P[i]+" ");
+            }
+            Console.WriteLine();
+            for (int i = 0; i<N.Count; i++)
+            {
+                Console.Write(N[i]+" ");
+            }
+    }
+}
