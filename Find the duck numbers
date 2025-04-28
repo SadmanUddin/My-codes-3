@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            string a = Console.ReadLine();
+            string[] List = a.Split(',');
+            List<double> Duck = new List<double>();
+            
+            foreach(string number in List)
+            {
+                //string number = F.Trim();
+                double val;
+
+                if(!double.TryParse(number,out val))
+                {
+                    continue;
+                }
+
+                if(!number.StartsWith("0") && number.Contains("0"))
+                {
+                    Duck.Add(val);
+                }
+            }
+            Duck.Sort();
+
+            foreach(Double X in Duck)
+            {
+                Console.Write(X + " ");
+            }
+        }
+        catch
+        {
+            Console.WriteLine("crazy input");
+        }
+    }
+}
