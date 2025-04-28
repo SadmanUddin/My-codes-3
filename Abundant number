@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            string[] numbers = Console.ReadLine().Split(' ');
+            int a = Convert.ToInt32(numbers[0]);
+            int b = Convert.ToInt32(numbers[1]);
+
+            if (a > b)
+            {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+
+            Dictionary<int, List<int>> sadman = new Dictionary<int, List<int>>();
+
+            for (int i = a; i <= b; i++)
+            {
+                int sum = 1;
+                for (int j = 2; j <= Math.Sqrt(i); j++)
+                {
+                    if (i % j == 0)
+                    {
+                        sum += j;
+                        if (j != i / j)
+                        {
+                            sum += i / j;
+                        }
+                    }
+                }
+
+                if (sum > i)
+                {
+                    int firstDigit = i;
+                    while (firstDigit >= 10)
+                    {
+                        firstDigit /= 10;
+                    }
+                    if (!sadman.ContainsKey(firstDigit))
+                    {
+                        sadman[firstDigit] = new List<int>();
+                    }
+                    sadman[firstDigit].Add(i);
+                }
+            }
+
+            foreach (int key in sadman.Keys)
+            {
+                sadman[key].Sort();
+            }
+
+            List<int> sortedKeys = new List<int>(sadman.Keys);
+            sortedKeys.Sort();
+
+            for (int index = 0; index < sortedKeys.Count; index++)
+            {
+                int key = sortedKeys[index];
+                Console.WriteLine(string.Join(" ", sadman[key]));
+            }
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("converting problem");
+        }
+        catch (IndexOutOfRangeException)
+        {
+            Console.WriteLine("index out of range");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("too big for this type");
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("crazy input");
+        }
+    }
+}
