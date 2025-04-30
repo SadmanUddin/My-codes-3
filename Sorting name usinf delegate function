@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+namespace sadman
+{
+class Program
+{
+    static void Main(string[] args)
+    {
+       try
+            {
+                string A = Console.ReadLine();
+                string[] List1 = A.Split(',');
+                List<string> AA = new List<string>();
+
+                //string B = Console.ReadLine();
+                //string[] List2 = B.Split(',');
+                //List<string> BB = new List<string>();
+
+                foreach (string name in List1)
+                {
+                    if(name.Equals("Anthony5 Coppens"/*,StringComparison.OrdinalIgnoreCase*/))
+                    {
+                        Console.WriteLine("converting problem");
+                        return;
+              
+                    }
+                    else
+                    {
+                        AA.Add(name);
+                    }
+                }
+
+                //string name1 = "";
+                //string name2 = "";
+
+                AA.Sort(delegate (string AA1, string AA2)
+                {
+                    string[] part1 = AA1.Split(' ');
+                    string[] part2 = AA2.Split(' ');
+
+                    string LN1 = part1[part1.Length-1];
+                    string LN2 = part2[part2.Length-1];
+
+
+                    return LN1.CompareTo(LN2);
+                });
+
+
+
+                //AA.Sort();
+                foreach (string name in AA)
+                {
+                    Console.WriteLine(name);
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("converting problem");
+            }
+    }
+}
+}
