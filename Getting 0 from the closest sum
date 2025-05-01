@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+                        try
+            {
+                //int X = Convert.ToInt32(Console.ReadLine());
+                int[] A = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                List<int> Numb = new List<int>(A);
+                //Numb.Sort();
+
+                int sum = int.MaxValue;
+                int numb1 = 0;
+                int numb2 = 0;
+
+                for(int i = 0; i<Numb.Count; i++)
+                {
+                    for(int j = i+1; j<Numb.Count; j++)
+                    {
+                        int sumX = Numb[i]+Numb[j];
+                        if (sumX>0&&sumX<sum)
+                        {
+                            sum = sumX;
+                            numb1 = Numb[i];
+                            numb2 = Numb[j];
+                        }
+                    }
+                }
+                Console.WriteLine(sum);
+                Console.WriteLine($"{numb1} {numb2}");
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("converting problem");
+            }
+        }
+    }
+}
