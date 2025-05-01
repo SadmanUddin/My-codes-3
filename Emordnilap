@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+namespace sadman
+{
+class Program
+{
+    static void Main(string[] args)
+    {
+            List<string> Emordnilap = new List<string> { "god", "desserts", "stressed", "reward", "drawer", "repaid", "diaper", "live", "evil"};
+            string[] a = Console.ReadLine().Split(' ');
+            List<string> X = new List<string>(a);
+            List<string> Y = new List<string>();
+
+            for (int i = 0; i<X.Count; i++)
+            {
+                string word = X[i];
+                char[] B = word.ToCharArray();
+                Array.Reverse(B);
+                string reversed = new string(B);
+
+                if (Emordnilap.Contains(reversed)&&reversed!=word)
+                {
+                    Y.Add(word);
+                }
+                Y.Sort();
+
+            }
+            Console.WriteLine(string.Join(" ", Y));
+    }
+}
