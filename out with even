@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+            List<int> A = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+
+           Dictionary<int, int> x = new Dictionary<int, int>();
+
+           foreach(int number in A)
+           {
+               if (x.ContainsKey(number))
+               {
+                   x[number]++;
+               }
+               else
+               {
+                   x[number] = 1;
+               }
+           }
+
+           List<int> result = A.Where(number => x[number]%2==1).ToList();
+
+           Console.WriteLine(string.Join(" ", result)+" ");
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("converting problem");
+            }
+        }
+    }
+}
