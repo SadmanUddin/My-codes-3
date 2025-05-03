@@ -1,0 +1,62 @@
+using System;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+            string[] pairs = Console.ReadLine().Split(' ').ToArray();
+
+            Dictionary<int, int> data = new Dictionary<int, int>();
+
+            foreach (string A in pairs)
+            {
+                string[] parts = A.Split('-');
+
+                int key = Convert.ToInt32(parts[0]);
+                int value = Convert.ToInt32(parts[1]);
+
+                data[key] = value;
+            }
+
+            int X = 0;
+            for(int i = 1; i<=9; i++)
+            {
+                if (!data.ContainsKey(i))
+                {
+                    X = i;
+                    break;
+                }
+            }
+            //Console.WriteLine(X);
+
+            List<int> keys = new List<int>(data.Keys);
+            List<int> values = new List<int>(data.Values);
+
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int d = 0;
+
+            for (int i = 0; i<keys.Count; i++)
+            {
+                if (a==0)
+                {
+                    a = keys[i];
+                    b = values[i];
+                }
+                else if (c==0)
+                {
+                    c = keys[i];
+                    d = values[i];
+                    break;
+                }
+            }
+
+            int Q = (d-b)/(c-a);
+            int w = b-Q*a;
+
+            int Y = Q*X+w;
+
+            Console.WriteLine(X+"-"+Y);
+      }
+}
