@@ -1,0 +1,69 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace sadman
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string fileX = Console.ReadLine();
+
+            string Text = File.ReadAllText(fileX);
+
+            Text = Regex.Replace(Text.ToLower(), @"[^\W\S]", "");
+
+            string[] words = Regex.Split(Text, @"\s+");
+
+            Dictionary<string, int> X = new Dictionary<string, int>();
+
+            foreach(string word in words)
+            {
+                if (X.ContainsKey(word))
+                {
+                    X[word]++;
+                }
+                else
+                {
+                    X[word] = 1;
+                }
+            }
+
+            int maxLength = 0;
+
+            foreach(string word in X.Keys)
+            {
+                if(word.Length > maxLength)
+                {
+                    maxLength = word.Length;
+                }
+            }
+
+            List<string> Long = new List<string>();
+
+            foreach(string word in X.Keys)
+            {
+                if(word.Length == maxLength)
+                {
+                    Long.Add(word);
+                }
+            }
+
+            string result = null;
+            int A = int.MaxValue;
+            foreach(string word in Long)
+            {
+                int b = X[word];
+                if (b<A)
+                {
+                    A=b;
+                    result = word;
+                }
+            }
+
+            Console.WriteLine(result.Trim(','));
+        }
+    }
+}
